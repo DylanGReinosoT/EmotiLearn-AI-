@@ -1,4 +1,4 @@
-const BASE_API_URL = 'http://localhost:8004/api/personas';
+const BASE_API_URL = 'http://192.168.100.244:8004/api/personas';
 
 export const loginUser = async (username, contraseña) => {
   const endpoint = '/login';

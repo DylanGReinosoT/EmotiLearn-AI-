@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8004/api/secciones';
+const API_URL = 'http://192.168.100.244:8004/api/secciones';
 
 // Crear una nueva sección
 export const crearSeccion = async (seccionTest) => {

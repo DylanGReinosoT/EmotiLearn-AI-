@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8004/api/informes';
+const API_URL = 'http://192.168.100.244:8004/api/informes';
 
 // Crear un nuevo informe
 export const crearInforme = async (informe) => {

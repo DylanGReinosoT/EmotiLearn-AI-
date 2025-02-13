@@ -40,7 +40,7 @@ Este proyecto es una plataforma educativa que utiliza análisis de video en tiem
     ```bash
     npm start
     ```
-2. Abre tu navegador y navega a `http://localhost:3000`.
+2. Abre tu navegador y navega a `http://192.168.100.244:3000`.
 
 ## Componentes
 

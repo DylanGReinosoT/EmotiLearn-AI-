@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8004/api/personas';
+const API_URL = 'http://192.168.100.244:8004/api/personas';
 
 // Obtener una persona por su ID
 export const obtenerPersonaPorId = async (id) => {

@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8004/api';
+const API_URL = 'http://192.168.100.244:8004/api';
 
 export const saveEmotionData = async (emotionData) => {
   try {
