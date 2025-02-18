@@ -1,4 +1,5 @@
-const API_URL = 'http://192.168.100.244:8004/api/secciones';
+const BASE_API_URL = process.env.REACT_APP_BASE_API_URL;
+const API_URL = `${BASE_API_URL}/api/secciones`;
 
 // Crear una nueva sección
 export const crearSeccion = async (seccionTest) => {
@@ -47,7 +48,6 @@ export const obtenerSecciones = async (idUsuario) => {
     throw error;
   }
 };
-
 
 // Obtener una sección por su ID
 export const obtenerSeccionPorId = async (id) => {

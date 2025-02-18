@@ -1,4 +1,5 @@
-const API_URL = 'http://192.168.100.244:8004/api/informes';
+const BASE_API_URL = process.env.REACT_APP_BASE_API_URL;
+const API_URL = `${BASE_API_URL}/api/informes`;
 
 // Crear un nuevo informe
 export const crearInforme = async (informe) => {
@@ -107,7 +108,6 @@ export const modificarInforme = async (id, informeModificado) => {
   }
 };
 
-
 export const ObtenerInformeForIDSeccion = async (idSeccion) => {
   try {
     const response = await fetch(`${API_URL}/seccion/${idSeccion}`, {
@@ -126,4 +126,4 @@ export const ObtenerInformeForIDSeccion = async (idSeccion) => {
     console.error(`Error al obtener el informe con ID ${idSeccion}:`, error);
     throw error;
   }
-}
+};

@@ -1,4 +1,5 @@
-const API_URL = 'http://192.168.100.244:8004/api';
+const BASE_API_URL = process.env.REACT_APP_BASE_API_URL;
+const API_URL = `${BASE_API_URL}/api`;
 
 export const saveEmotionData = async (emotionData) => {
   try {
@@ -20,7 +21,6 @@ export const saveEmotionData = async (emotionData) => {
     throw error;
   }
 };
-
 
 export const obtenerResultadoPorSeccionParticipanteSId = async (idSeccion) => {
   try {
@@ -47,49 +47,47 @@ export const obtenerResultadoPorSeccionParticipanteSId = async (idSeccion) => {
   }
 };
 
-
 export const saveAttentionData = async (attentionData) => {
-    try {
-        const response = await fetch(`${API_URL}/participantessesiones`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(attentionData),
-        });
-    
-        if (!response.ok) {
-        throw new Error('Error al enviar datos al servidor');
-        }
-    
-        return await response.json();
-    } catch (error) {
-        console.error('Error al enviar datos al servidor:', error);
-        throw error;
+  try {
+    const response = await fetch(`${API_URL}/participantessesiones`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(attentionData),
+    });
+
+    if (!response.ok) {
+      throw new Error('Error al enviar datos al servidor');
     }
-}
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error al enviar datos al servidor:', error);
+    throw error;
+  }
+};
 
 export const saveAnalisisAtention = async (analisisAtentionData) => {
-    try {
-        const response = await fetch(`${API_URL}/analisis-tiempo-real`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(analisisAtentionData),
-        });
-    
-        if (!response.ok) {
-        throw new Error('Error al enviar datos al servidor');
-        }
-    
-        return await response.json();
-    } catch (error) {
-        console.error('Error al enviar datos al servidor:', error);
-        throw error;
-    }
-}
+  try {
+    const response = await fetch(`${API_URL}/analisis-tiempo-real`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(analisisAtentionData),
+    });
 
+    if (!response.ok) {
+      throw new Error('Error al enviar datos al servidor');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error al enviar datos al servidor:', error);
+    throw error;
+  }
+};
 
 export const obtenerResultadoPorSeccionId = async (idSeccion) => {
   try {
@@ -135,4 +133,4 @@ export const registerUser = async (userData) => {
     console.error('Error al registrar el usuario:', error);
     throw error;
   }
-}
+};
